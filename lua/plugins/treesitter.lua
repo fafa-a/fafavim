@@ -3,11 +3,11 @@ return {
   opts = {
     ensure_installed = {
       "cmake",
-      "cpp",
       "css",
       "gitignore",
       "graphql",
       "http",
+      "python",
       "rust",
       "scss",
       "sql",
