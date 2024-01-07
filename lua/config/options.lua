@@ -4,3 +4,15 @@
 local opt = vim.opt
 opt.background = "light"
 opt.cursorline = true
+
+-- vimwiki
+opt.compatible = false
+vim.api.nvim_set_var("filetype", "plugin")
+vim.cmd("syntax on")
+vim.g.vimwiki_list = {
+  {
+    path = "~/Documents/notes/",
+    syntax = "markdown",
+    ext = ".md",
+  },
+}

@@ -10,14 +10,14 @@ return {
     event = "VimEnter",
     opts = function(_, opts)
       local logo = [[
-      
+
         ███████╗ █████╗ ███████╗ █████╗ ██╗   ██╗██╗███╗   ███╗
         ██╔════╝██╔══██╗██╔════╝██╔══██╗██║   ██║██║████╗ ████║
         █████╗  ███████║█████╗  ███████║██║   ██║██║██╔████╔██║
         ██╔══╝  ██╔══██║██╔══╝  ██╔══██║╚██╗ ██╔╝██║██║╚██╔╝██║
         ██║     ██║  ██║██║     ██║  ██║ ╚████╔╝ ██║██║ ╚═╝ ██║
         ╚═╝     ╚═╝  ╚═╝╚═╝     ╚═╝  ╚═╝  ╚═══╝  ╚═╝╚═╝     ╚═╝
-                                                                
+
       ]]
 
       logo = string.rep("\n", 8) .. logo .. "\n\n"
@@ -25,22 +25,25 @@ return {
     end,
   },
   {
-    "nvim-neo-tree/neo-tree.nvim",
+    "tzachar/highlight-undo.nvim",
+    opts = {},
+    config = function()
+      require("highlight-undo").setup({})
+    end,
+  },
+  {
+    "echasnovski/mini.animate",
+    event = "VeryLazy",
+    opts = function(_, opts)
+      opts.cursor = {
+        enable = false,
+      }
+    end,
+  },
+  {
+    "nvim-lualine/lualine.nvim",
     opts = {
-      filesystem = {
-        filtered_items = {
-          visible = true,
-          show_hidden_count = true,
-          hide_dotfiles = false,
-          hide_gitignored = false,
-          hide_by_name = {
-            -- '.git',
-            -- '.DS_Store',
-            -- 'thumbs.db',
-          },
-          never_show = {},
-        },
-      },
+      theme = "monokai-nightasty",
     },
   },
 }
