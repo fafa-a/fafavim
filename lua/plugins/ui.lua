@@ -46,4 +46,12 @@ return {
       theme = "monokai-nightasty",
     },
   },
+  {
+    "numToStr/FTerm.nvim",
+    keys = {
+      { "`", '<CMD>lua require("FTerm").toggle()<CR>', desc = "Open terminal" },
+      { "`", '<C-\\><C-n><CMD>lua require("FTerm").toggle()<CR>', mode = "t", desc = "Close terminal" },
+    },
+    config = function() end,
+  },
 }

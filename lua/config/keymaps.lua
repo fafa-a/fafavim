@@ -27,3 +27,25 @@ map("i", "<tab>", function()
   -- Put cursor on next line.
   vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes("<End>", true, false, true), "n", false)
 end)
+
+local fterm = require("FTerm")
+
+local btop = fterm:new({
+  ft = "fterm_btop",
+  cmd = "btop",
+})
+
+local lazygit = fterm:new({
+  ft = "fterm_lazygit",
+  cmd = "lazygit",
+})
+
+-- Use this to toggle btop in a floating terminal
+map("n", "<A-b>", function()
+  btop:toggle()
+end)
+
+-- Use this to toggle lazygit in a floating terminal
+map("n", "<A-g>", function()
+  lazygit:toggle()
+end)

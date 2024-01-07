@@ -14,8 +14,11 @@ return {
   {
     "polirritmico/monokai-nightasty.nvim",
     priority = 1000,
+    keys = {
+      { "<leader>tt", "<cmd>MonokaiToggleLight<cr>", desc = "Monokai-Nightasty: Toggle dark/light theme." },
+    },
     opts = {
-      dark_style_background = "transparent", -- default, dark, transparent, #color
+      dark_style_background = "default", -- default, dark, transparent, #color
       light_style_background = "default", -- default, dark, transparent, #color
       terminal_colors = true, -- Set the colors used when opening a `:terminal`
       color_headers = false, -- Enable header colors for each header level (h1, h2, etc.)
