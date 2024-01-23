@@ -1,5 +1,12 @@
 return {
-  -- tools
+  {
+    "neovim/nvim-lspconfig",
+    opts = {
+      inlay_hints = {
+        enabled = true,
+      },
+    },
+  },
   {
     "williamboman/mason.nvim",
     opts = function(_, opts)
@@ -14,5 +21,15 @@ return {
         "typescript-language-server",
       })
     end,
+  },
+  {
+    "simrat39/rust-tools.nvim",
+    opts = {
+      tools = {
+        inlay_hints = {
+          auto = false,
+        },
+      },
+    },
   },
 }

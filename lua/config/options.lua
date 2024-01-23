@@ -5,6 +5,14 @@ local opt = vim.opt
 opt.background = "light"
 opt.cursorline = true
 
+-- set back up and swap file directory
+opt.swapfile = false
+-- opt.backup = false
+local home = os.getenv("HOME")
+local backupDir = home .. "/.nvim/tmp/"
+vim.opt.directory = backupDir
+opt.undofile = true
+
 -- vimwiki
 opt.compatible = false
 vim.api.nvim_set_var("filetype", "plugin")

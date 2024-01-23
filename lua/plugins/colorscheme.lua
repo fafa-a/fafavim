@@ -57,7 +57,7 @@ return {
     lazy = false,
     priority = 1000,
   },
-  { "RRethy/nvim-base16" },
+  { "rakr/vim-one" },
   {
     "LazyVim/LazyVim",
     opts = {
