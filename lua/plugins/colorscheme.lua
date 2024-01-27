@@ -57,11 +57,18 @@ return {
     lazy = false,
     priority = 1000,
   },
-  { "rakr/vim-one" },
+  {
+    "NTBBloodbath/doom-one.nvim",
+    priority = 1000,
+  },
+  { "M1nts02/akane.nvim", priority = 1000 },
+  { "owickstrom/vim-colors-paramount" },
+  { "ntk148v/komau.vim" },
+  { "pgdouyon/vim-yin-yang" },
   {
     "LazyVim/LazyVim",
     opts = {
-      colorscheme = "monokai-nightasty",
+      colorscheme = "doom-one",
     },
   },
 }
