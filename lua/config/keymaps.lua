@@ -49,3 +49,19 @@ end)
 map("n", "<A-g>", function()
   lazygit:toggle()
 end)
+
+-- Do not copy on paste
+map("v", "p", '"_dP')
+
+-- Do not copy on delete
+map({ "n", "v" }, "d", '"_d')
+
+-- Stay in visual mode after indenting with < or >
+map("v", ">", ">gv")
+map("v", "<", "<gv")
+
+-- Close buffer
+map("n", "bc", "<cmd>bd<cr>")
+
+-- Close current window
+map("n", "<leader>wc", "<C-w>c", { desc = "Close current window" })
