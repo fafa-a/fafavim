@@ -9,3 +9,10 @@ vim.cmd([[
     autocmd VimLeave * set guicursor=n-v-c:block,i-ci-ve:ver100/,a:blinkwait700-blinkoff400-blinkon250-CursorReset/lCursorReset
   augroup END
 ]])
+-- Disable autoformat for all files
+vim.api.nvim_create_autocmd({ "FileType" }, {
+  pattern = { "*" },
+  callback = function()
+    vim.b.autoformat = false
+  end,
+})
