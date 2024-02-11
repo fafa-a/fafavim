@@ -22,11 +22,11 @@ map("v", "K", ":m '<-2<CR>gv=gv", { silent = true })
 -- remap vimwiki keymaps conflict with base keymaps
 map("n", "<Leader>ow", "<Plug>VimwikiIndex", { silent = true })
 
-map("i", "<tab>", function()
-  require("copilot.suggestion").accept()
-  -- Put cursor on next line.
-  vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes("<End>", true, false, true), "n", false)
-end)
+-- map("i", "<tab>", function()
+--   require("copilot.suggestion").accept()
+--   -- Put cursor on next line.
+--   vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes("<End>", true, false, true), "n", false)
+-- end)
 
 local fterm = require("FTerm")
 
@@ -54,7 +54,7 @@ end)
 map("v", "p", '"_dP')
 
 -- Do not copy on delete
-map({ "n", "v" }, "d", '"_d')
+-- map({ "n", "v" }, "d", '"_d')
 
 -- Stay in visual mode after indenting with < or >
 map("v", ">", ">gv")

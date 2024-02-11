@@ -5,6 +5,12 @@ local opt = vim.opt
 opt.background = "light"
 opt.cursorline = true
 
+-- On pressing tab, insert spaces
+opt.expandtab = true
+-- Show existing tab with 2 spaces width
+opt.tabstop = 2
+opt.softtabstop = 2
+
 -- set back up and swap file directory
 opt.swapfile = false
 -- opt.backup = false
