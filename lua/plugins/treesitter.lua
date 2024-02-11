@@ -14,6 +14,7 @@ return {
       "sql",
       "svelte",
       "tsx",
+      "typescript",
     },
   },
 }
