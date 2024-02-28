@@ -33,6 +33,9 @@ vim.g.doom_one_terminal_colors = true
 -- Enable transparent background
 -- vim.g.doom_one_transparent_background = false
 
+vim.g.yui_folds = 'fade'
+vim.g.yui_line_numbers = 'fade'
+vim.g.yui_comments = 'emphasize'
 -- vimwiki
 opt.compatible = false
 vim.api.nvim_set_var("filetype", "plugin")

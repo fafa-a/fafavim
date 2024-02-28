@@ -65,10 +65,13 @@ return {
   { "owickstrom/vim-colors-paramount" },
   { "ntk148v/komau.vim" },
   { "pgdouyon/vim-yin-yang" },
+  {"stefanvanburen/rams.vim"},
+  {"nikolvs/vim-sunbather"},
+  {"cideM/yui"},
   {
     "LazyVim/LazyVim",
     opts = {
-      colorscheme = "doom-one",
+      colorscheme = "yui",
     },
   },
 }
