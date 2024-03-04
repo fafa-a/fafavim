@@ -1,3 +1,13 @@
+local function check_prettier_config(bufnr)
+  local prettier_configs = { ".prettierrc", ".prettierrc.json", ".prettierrc.yaml", ".prettierrc.yml", ".prettierrc.js", "prettier.config.js" }
+  for _, config_file in ipairs(prettier_configs) do
+    if vim.fn.filereadable(config_file) == 1 then
+      return { "prettierd", "prettier" }
+    end
+  end
+  return { "biome" }
+end
+
 return {
   "stevearc/conform.nvim",
   opts = {
@@ -22,12 +32,4 @@ return {
   },
 }
 
-function check_prettier_config(bufnr)
-  local prettier_configs = { ".prettierrc", ".prettierrc.json", ".prettierrc.yaml", ".prettierrc.yml", ".prettierrc.js", "prettier.config.js" }
-  for _, config_file in ipairs(prettier_configs) do
-    if vim.fn.filereadable(config_file) == 1 then
-      return { "prettierd", "prettier" }
-    end
-  end
-  return { "biome" }
-end
+
