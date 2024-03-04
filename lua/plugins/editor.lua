@@ -106,4 +106,7 @@ return {
       end, { noremap = true, silent = true, desc = "[harpoon] select 4" })
     end,
   },
+  { "lewis6991/gitsigns.nvim", event = "LazyFile", opts = {
+    numhl = true,
+  } },
 }
