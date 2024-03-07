@@ -19,6 +19,10 @@ local backupDir = home .. "/.nvim/tmp/"
 vim.opt.directory = backupDir
 opt.undofile = true
 
+-- svelte
+vim.g.vim_svelte_plugin_use_typescript = 1
+vim.g.vim_svelte_plugin_load_full_syntax = 1
+
 -- doom-one colorscheme
 -- Add color to cursor
 vim.g.doom_one_cursor_coloring = true
@@ -33,9 +37,14 @@ vim.g.doom_one_terminal_colors = true
 -- Enable transparent background
 -- vim.g.doom_one_transparent_background = false
 
-vim.g.yui_folds = 'fade'
-vim.g.yui_line_numbers = 'fade'
-vim.g.yui_comments = 'emphasize'
+-- yui colorscheme
+vim.g.yui_folds = "fade"
+vim.g.yui_line_numbers = "fade"
+vim.g.yui_comments = "emphasize"
+
+-- rams colorscheme
+vim.g.colors_name = "rams"
+
 -- vimwiki
 opt.compatible = false
 vim.api.nvim_set_var("filetype", "plugin")

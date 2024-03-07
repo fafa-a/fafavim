@@ -40,12 +40,12 @@ return {
       }
     end,
   },
-  {
-    "nvim-lualine/lualine.nvim",
-    opts = {
-      theme = "monokai-nightasty",
-    },
-  },
+  -- {
+  --   "nvim-lualine/lualine.nvim",
+  --   opts = {
+  --     theme = "monokai-nightasty",
+  --   },
+  -- },
   {
     "numToStr/FTerm.nvim",
     keys = {

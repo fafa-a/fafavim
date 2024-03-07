@@ -66,8 +66,11 @@ return {
   { "ntk148v/komau.vim" },
   { "pgdouyon/vim-yin-yang" },
   {"stefanvanburen/rams.vim"},
-  {"nikolvs/vim-sunbather"},
-  {"cideM/yui"},
+  { "nikolvs/vim-sunbather" },
+  { "cideM/yui" },
+  {"kkga/vim-envy"},
+  {"scolsen/bernhard"},
+  {"aerosol/dumbotron.vim"},
   {
     "LazyVim/LazyVim",
     opts = {
