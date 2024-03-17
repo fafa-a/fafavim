@@ -64,13 +64,13 @@ return {
   { "M1nts02/akane.nvim", priority = 1000 },
   { "owickstrom/vim-colors-paramount" },
   { "ntk148v/komau.vim" },
-  { "pgdouyon/vim-yin-yang" },
   {"stefanvanburen/rams.vim"},
   { "nikolvs/vim-sunbather" },
   { "cideM/yui" },
   {"kkga/vim-envy"},
   {"scolsen/bernhard"},
   {"aerosol/dumbotron.vim"},
+  {"axvr/photon.vim"},
   {
     "LazyVim/LazyVim",
     opts = {
