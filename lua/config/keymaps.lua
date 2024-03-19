@@ -65,3 +65,9 @@ map("n", "bc", "<cmd>bd<cr>")
 
 -- Close current window
 map("n", "<leader>wc", "<C-w>c", { desc = "Close current window" })
+
+--  show the highlight groups under the cursor
+map("n","<leader>i", ":Inspect<CR>", { desc = "Show highlight groups under cursor" })
+
+-- show the parsed syntax tree
+map("n","<leader>it", ":InspectTree<CR>", { desc = "Show parsed syntax tree" })
