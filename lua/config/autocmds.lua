@@ -17,3 +17,12 @@ vim.api.nvim_create_autocmd({ "FileType" }, {
     vim.b.autoformat = false
   end,
 })
+
+function InspectSyntaxGroup()
+    local synID = vim.api.nvim_call_function('synID', {vim.fn.line('.'), vim.fn.col('.'), 1})
+    local syn_group = vim.api.nvim_call_function('synIDattr', {synID, 'name'})
+
+    print("Syntax Group: " .. syn_group)
+end
+
+vim.api.nvim_set_keymap("n", "<leader>g", ":lua InspectSyntaxGroup()<CR>", { silent = true })
