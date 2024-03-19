@@ -1,3 +1,4 @@
+print(os.getenv("HOME"))
 return {
   {
     "catppuccin/nvim",
@@ -71,20 +72,10 @@ return {
   { "scolsen/bernhard" },
   { "aerosol/dumbotron.vim" },
   { "axvr/photon.vim" },
-  -- {
-  --   "uloco/bluloco.nvim",
-  --   lazy = false,
-  --   priority = 1000,
-    -- dependencies = { "rktjmp/lush.nvim" },
-    -- require("bluloco").setup({
-    --   style = "light", -- "auto" | "dark" | "light"
-    --   transparent = false,
-    --   italics = true,
-    --   terminal = vim.fn.has("gui_running") == 1, -- bluoco colors are enabled in gui terminals per default.
-    --   guicursor = true,
-    -- }),
-  -- },
-  {dir = '/home/fpuech/Dev/anoukis',lazy = true},
+  {
+    dir = os.getenv("HOME") .. ( os.getenv("HOME") == '/home/fafa' and "/code/anoukis" or "/Dev/anoukis"),
+    lazy = true,
+  },
   {
     "LazyVim/LazyVim",
     opts = {
