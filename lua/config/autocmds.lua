@@ -1,7 +1,7 @@
 -- Autocmds are automatically loaded on the VeryLazy event
 -- Default autocmds that are always set: https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/autocmds.lua
 -- Add any additional autocmds here
--- vim.api.nvim_set_hl(0, "CursorReset", { bg = "#c4c3c5", fg = "#ffffff" })
+-- vim.api.nvim_set_hl(0, "CursorReset", { bg = "#A17EE6", fg = "#FBF9FF" })
 --
 -- vim.cmd([[
 --   augroup RestoreCursorShapeOnExit
@@ -18,11 +18,4 @@ vim.api.nvim_create_autocmd({ "FileType" }, {
   end,
 })
 
-function InspectSyntaxGroup()
-    local synID = vim.api.nvim_call_function('synID', {vim.fn.line('.'), vim.fn.col('.'), 1})
-    local syn_group = vim.api.nvim_call_function('synIDattr', {synID, 'name'})
 
-    print("Syntax Group: " .. syn_group)
-end
-
-vim.api.nvim_set_keymap("n", "<leader>g", ":lua InspectSyntaxGroup()<CR>", { silent = true })
