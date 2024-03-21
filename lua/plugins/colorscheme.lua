@@ -1,4 +1,3 @@
-print(os.getenv("HOME"))
 return {
   {
     "catppuccin/nvim",
@@ -73,8 +72,9 @@ return {
   { "aerosol/dumbotron.vim" },
   { "axvr/photon.vim" },
   {
-    dir = os.getenv("HOME") .. ( os.getenv("HOME") == '/home/fafa' and "/code/anoukis" or "/Dev/anoukis"),
-    lazy = true,
+    "fafa-a/anoukis",
+    priority = 1000,
+    lazy = false,
   },
   {
     "LazyVim/LazyVim",
