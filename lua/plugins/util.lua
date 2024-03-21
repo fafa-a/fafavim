@@ -3,4 +3,5 @@ return {
   -- theme builder
   { "rktjmp/lush.nvim" },
   { "rktjmp/shipwright.nvim" },
+  {"tjdevries/colorbuddy.nvim"},
 }
