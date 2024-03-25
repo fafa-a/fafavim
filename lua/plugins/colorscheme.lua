@@ -7,7 +7,7 @@ return {
 
       catppuccin.setup({
         flavour = "latte",
-        transparent_background = true,
+        transparent_background = false,
       })
     end,
   },
@@ -52,28 +52,14 @@ return {
       end,
     },
   },
-  {
-    "Mofiqul/adwaita.nvim",
-    lazy = false,
-    priority = 1000,
-  },
-  {
-    "NTBBloodbath/doom-one.nvim",
-    priority = 1000,
-  },
   { "M1nts02/akane.nvim", priority = 1000 },
   { "owickstrom/vim-colors-paramount" },
-  { "ntk148v/komau.vim" },
   { "stefanvanburen/rams.vim" },
-  { "nikolvs/vim-sunbather" },
   { "cideM/yui" },
-  { "kkga/vim-envy" },
   { "scolsen/bernhard" },
-  { "aerosol/dumbotron.vim" },
-  { "axvr/photon.vim" },
   {
-    dir = os.getenv("HOME") .. ( os.getenv("HOME") == '/home/fafa' and "/code/anoukis" or "/Dev/anoukis"),
-    -- "fafa-a/anoukis",
+    -- dir = os.getenv("HOME") .. (os.getenv("HOME") == "/home/fafa" and "/code/anoukis" or "/Dev/anoukis"),
+    "fafa-a/anoukis",
     priority = 1000,
     lazy = false,
   },
