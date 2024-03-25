@@ -83,4 +83,13 @@ return {
       on_close = function() end,
     },
   },
+  {
+    "akinsho/bufferline.nvim",
+    -- lazy = true,
+    config = function()
+      require("bufferline").setup({
+        highlights = require("anoukis.plugins.bufferline").setup(),
+      })
+    end,
+  },
 }
