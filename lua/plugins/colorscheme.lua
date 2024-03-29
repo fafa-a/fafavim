@@ -38,7 +38,7 @@ return {
       dim_inactive = false, -- dims inactive windows
       lualine_bold = true, -- Lualine headers will be bold or regular.
       lualine_style = "light", -- "dark", "lig"
-      ---@param colors ColorScheme
+      ---@class ColorScheme
       on_colors = function(colors)
         colors.border = colors.grey
         colors.comment = "#2d7e79"
@@ -58,8 +58,8 @@ return {
   { "cideM/yui" },
   { "scolsen/bernhard" },
   {
-    -- dir = os.getenv("HOME") .. (os.getenv("HOME") == "/home/fafa" and "/code/anoukis" or "/Dev/anoukis"),
-    "fafa-a/anoukis",
+    dir = os.getenv("HOME") .. (os.getenv("HOME") == "/home/fafa" and "/code/anoukis" or "/Dev/anoukis"),
+    -- "fafa-a/anoukis",
     priority = 1000,
     lazy = false,
   },

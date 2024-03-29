@@ -67,8 +67,8 @@ return {
           -- statusline will be shown only if 'laststatus' == 3
           laststatus = 0, -- turn off the statusline in zen mode
         },
-        twilight = { enabled = true }, -- enable to start Twilight when zen mode opens
-        gitsigns = { enabled = false }, -- disables git signs
+        twilight = { enabled = false }, -- enable to start Twilight when zen mode opens
+        gitsigns = { enabled = true }, -- disables git signs
         -- this will change the font size on wezterm when in zen mode
         -- See alse also the Plugins/Wezterm section in this projects README
         wezterm = {
@@ -77,10 +77,6 @@ return {
           font = "+4", -- (10% increase per step)
         },
       },
-      -- callback where you can add custom code when the Zen window opens
-      on_open = function(win) end,
-      -- callback where you can add custom code when the Zen window closes
-      on_close = function() end,
     },
   },
   {
