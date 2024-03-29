@@ -60,8 +60,5 @@ map("v", "p", '"_dP')
 map("v", ">", ">gv")
 map("v", "<", "<gv")
 
--- Close buffer
-map("n", "bc", "<cmd>bd<cr>")
-
 -- show the parsed syntax tree
 map("n","<leader>it", ":InspectTree<CR>", { desc = "Show parsed syntax tree" })
