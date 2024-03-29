@@ -11,9 +11,6 @@ opt.expandtab = true
 opt.tabstop = 2
 opt.softtabstop = 2
 
--- hack to disable spell check bug
-vim.cmd([[autocmd BufEnter * setlocal nospell]])
-
 -- set back up and swap file directory
 opt.swapfile = false
 -- opt.backup = false
