@@ -7,7 +7,7 @@ return {
 
       catppuccin.setup({
         flavour = "latte",
-        transparent_background = false,
+        transparent_background = true,
       })
     end,
   },
@@ -62,6 +62,22 @@ return {
     -- "fafa-a/anoukis",
     priority = 1000,
     lazy = false,
+    opts = {
+      transparent_background = true,
+      variants = "", -- defaut "purple" , "gray" | "red" | "orange" | "yellow" | "green" | "cyan" | "blue" | "rose""
+      --   styles = {
+      --     comments = { "italic" },
+      --     conditionals = {},
+      --     functions = { "bold" },
+      --     keywords = {},
+      --     strings = { "italic" },
+      --     variables = {},
+      --     numbers = {},
+      --     booleans = {},
+      --     types =  {} ,
+      --     operators = {},
+      --   },
+    },
   },
   {
     "LazyVim/LazyVim",
