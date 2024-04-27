@@ -31,6 +31,9 @@ map("n", "<Leader>ow", "<Plug>VimwikiIndex", { silent = true })
 -- end)
 
 local fterm = require("FTerm")
+map('n', '<C-`>', '<CMD>lua require("FTerm").toggle()<CR>')
+map('t', '<C-`>', '<C-\\><C-n><CMD>lua require("FTerm").toggle()<CR>')
+
 
 local btop = fterm:new({
   ft = "fterm_btop",
@@ -48,7 +51,7 @@ map("n", "<A-b>", function()
 end)
 
 -- Use this to toggle lazygit in a floating terminal
-map("n", "<A-g>", function()
+map("n", "<C-g>", function()
   lazygit:toggle()
 end)
 

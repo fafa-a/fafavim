@@ -29,7 +29,6 @@ return {
     opts = function(_, opts)
       vim.list_extend(opts.ensure_installed, {
         "bash-language-server",
-        "biome",
         "css-lsp",
         "luacheck",
         "shellcheck",
