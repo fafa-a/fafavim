@@ -56,3 +56,5 @@ vim.g.vimwiki_list = {
     ext = ".md",
   },
 }
+
+vim.g.root_spec = { "cwd" }
