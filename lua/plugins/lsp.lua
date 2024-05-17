@@ -34,7 +34,6 @@ return {
         "shellcheck",
         "shfmt",
         "stylua",
-        "svelte-language-server",
         "typescript-language-server",
       })
     end,
