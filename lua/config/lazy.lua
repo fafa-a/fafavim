@@ -18,12 +18,11 @@ require("lazy").setup({
     { import = "lazyvim.plugins.extras.lang.cmake" },
     { import = "lazyvim.plugins.extras.lang.docker" },
     { import = "lazyvim.plugins.extras.lang.markdown" },
-    { import = "lazyvim.plugins.extras.lang.python" },
     { import = "lazyvim.plugins.extras.lang.rust" },
     { import = "lazyvim.plugins.extras.ui.mini-animate" },
-    { import = "lazyvim.plugins.extras.dap.core" },
     { import = "lazyvim.plugins.extras.editor.harpoon2" },
     { import = "lazyvim.plugins.extras.coding.copilot-chat" },
+    { import = "lazyvim.plugins.extras.lang.gleam" },
     { import = "plugins" },
   },
   defaults = {

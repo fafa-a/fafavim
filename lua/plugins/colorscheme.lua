@@ -64,6 +64,7 @@ return {
     lazy = false,
     opts = {
       transparent_background = true,
+      diagnostic_background = false,
       variants = "", -- defaut "purple" , "gray" | "red" | "orange" | "yellow" | "green" | "cyan" | "blue" | "rose""
       --   styles = {
       --     comments = { "italic" },
