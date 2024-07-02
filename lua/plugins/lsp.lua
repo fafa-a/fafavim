@@ -16,7 +16,7 @@
 -- vim.api.nvim_create_user_command("MasonExtraInstall", prettier_plugin_svelte_install, {})
 
 return {
-    {
+  {
     "williamboman/mason.nvim",
     opts = function(_, opts)
       vim.list_extend(opts.ensure_installed, {
@@ -28,6 +28,16 @@ return {
         "stylua",
         "typescript-language-server",
       })
+    end,
+  },
+  {
+    "neovim/nvim-lspconfig",
+    opts = function()
+      return {
+        setup = {
+          ["*"] = function(server, opts) end,
+        },
+      }
     end,
   },
 }
