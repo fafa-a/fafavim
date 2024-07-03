@@ -23,6 +23,7 @@ require("lazy").setup({
     { import = "lazyvim.plugins.extras.editor.harpoon2" },
     { import = "lazyvim.plugins.extras.coding.copilot-chat" },
     { import = "lazyvim.plugins.extras.lang.gleam" },
+    { import = "lazyvim.plugins.extras.ui.alpha" },
     { import = "plugins" },
   },
   defaults = {
