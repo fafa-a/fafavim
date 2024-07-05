@@ -19,9 +19,11 @@ vim.api.nvim_create_autocmd({ "FileType" }, {
     vim.wo.spell = false
   end,
 })
+
 vim.api.nvim_create_autocmd("FileType", {
   pattern = { "gleam", "typescript", "typescriptreact" },
   callback = function()
+    vim.b.autoformat = true
     local bufnr = vim.api.nvim_get_current_buf()
     local client = vim.lsp.get_active_clients({ bufnr = bufnr })[1]
     if not client then

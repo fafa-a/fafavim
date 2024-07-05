@@ -13,14 +13,14 @@ return {
     opts = {
       defaults = {
         layout_strategy = "flex",
-        layout_config = {
-          vertical = {
-            size = {
-              width = "90%",
-              height = "90%",
-            },
-          },
-        },
+        -- layout_config = {
+        --   vertical = {
+        --     size = {
+        --       width = "90%",
+        --       height = "90%",
+        --     },
+        --   },
+        -- },
         sorting_strategy = "ascending",
         winblend = 0,
       },
