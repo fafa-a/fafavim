@@ -19,32 +19,6 @@ local backupDir = home .. "/.nvim/tmp/"
 vim.opt.directory = backupDir
 opt.undofile = true
 
--- svelte
-vim.g.vim_svelte_plugin_use_typescript = 1
-vim.g.vim_svelte_plugin_load_full_syntax = 1
-
--- doom-one colorscheme
--- Add color to cursor
-vim.g.doom_one_cursor_coloring = true
--- Set :terminal colors
-vim.g.doom_one_terminal_colors = true
--- Enable italic comments
--- vim.g.doom_one_italic_comments = false
--- Enable TS support
--- vim.g.doom_one_enable_treesitter = true
--- Color whole diagnostic text or only underline
--- vim.g.doom_one_diagnostics_text_color = false
--- Enable transparent background
--- vim.g.doom_one_transparent_background = false
-
--- yui colorscheme
-vim.g.yui_folds = "fade"
-vim.g.yui_line_numbers = "fade"
-vim.g.yui_comments = "emphasize"
-
--- rams colorscheme
-vim.g.colors_name = "rams"
-
 -- vimwiki
 opt.compatible = false
 vim.api.nvim_set_var("filetype", "plugin")

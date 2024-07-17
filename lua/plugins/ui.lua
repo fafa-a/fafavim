@@ -40,19 +40,6 @@ return {
       }
     end,
   },
-  -- {
-  --   "nvim-lualine/lualine.nvim",
-  --   opts = {
-  --     theme = "monokai-nightasty",
-  --   },
-  -- },
-  {
-    "numToStr/FTerm.nvim",
-    keys = {
-      { "<A-`>", '<CMD>lua require("FTerm").toggle()<CR>', desc = "Open terminal" },
-      { "<A-`>", '<C-\\><C-n><CMD>lua require("FTerm").toggle()<CR>', mode = "t", desc = "Close terminal" },
-    },
-  },
   {
     "folke/zen-mode.nvim",
     opts = {
