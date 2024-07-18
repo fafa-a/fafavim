@@ -20,6 +20,16 @@ vim.api.nvim_create_autocmd({ "FileType" }, {
   end,
 })
 
+local function file_exists(name)
+  local f = io.open(name, "r")
+  if f ~= nil then
+    io.close(f)
+    return true
+  else
+    return false
+  end
+end
+
 vim.api.nvim_create_autocmd("FileType", {
   pattern = { "gleam", "typescript", "typescriptreact" },
   callback = function()
@@ -28,16 +38,25 @@ vim.api.nvim_create_autocmd("FileType", {
     local client = vim.lsp.get_active_clients({ bufnr = bufnr })[1]
     if not client then
       local filetype = vim.bo.filetype
-      local lsp_config = require('lspconfig')
-      
+      local lsp_config = require("lspconfig")
+
       if filetype == "gleam" and lsp_config.gleam then
-        lsp_config.gleam.setup{}
+        lsp_config.gleam.setup({})
       elseif (filetype == "typescript" or filetype == "typescriptreact") and lsp_config.vtsls then
-        lsp_config.vtsls.setup{}
+        lsp_config.vtsls.setup({})
+
+        if file_exists("biome.json") then
+          lsp_config.biome.setup({})
+        elseif file_exists(".eslintrc.js") or file_exists(".eslintrc.json") or file_exists(".eslintrc") then
+          lsp_config.eslint.setup({})
+        end
+
+        if file_exists(".prettierrc") or file_exists(".prettierrc.js") or file_exists(".prettierrc.json") then
+          lsp_config.prettier.setup({})
+        end
       end
-      
+
       vim.lsp.buf_attach_client(bufnr, 0)
     end
   end,
 })
-
