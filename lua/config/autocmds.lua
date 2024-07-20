@@ -88,5 +88,6 @@ local function toggle_all_jsdoc_folds()
   vim.cmd("nohlsearch")
   print(vim.wo.foldenable and "All JSDoc folds closed" or "All JSDoc folds opened")
 end
+
 -- Create a command to toggle all JSDoc folds
 vim.api.nvim_create_user_command("ToggleAllJSDocFolds", toggle_all_jsdoc_folds, {})

@@ -32,9 +32,3 @@ vim.g.vimwiki_list = {
 }
 
 vim.g.root_spec = { "cwd" }
-
--- Set up folding options
--- vim.opt.foldexpr = "v:lua.vim.treesitter.foldexpr()"
--- vim.opt.foldmethod = "expr"
--- vim.wo.foldminlines = 1
--- vim.wo.foldnestmax = 3
