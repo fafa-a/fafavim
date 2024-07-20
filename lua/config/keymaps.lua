@@ -84,3 +84,6 @@ map("v", "<", "<gv")
 
 -- show the parsed syntax tree
 map("n","<leader>it", ":InspectTree<CR>", { desc = "Show parsed syntax tree" })
+
+-- toggle js docs
+vim.api.nvim_set_keymap('n', '<leader>zd', ':ToggleAllJSDocFolds<CR>', {noremap = true, silent = true})
