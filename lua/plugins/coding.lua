@@ -91,13 +91,13 @@ return {
       -- { "<leader>ccc", "<cmd>CopilotChatConcise<cr>", desc = "CopilotChat - Make text concise" },
     },
   },
-  {
-    "dmmulroy/ts-error-translator.nvim",
-    event = "VeryLazy",
-    config = function()
-      require("ts-error-translator").setup()
-    end,
-  },
+  -- {
+  --   "dmmulroy/ts-error-translator.nvim",
+  --   event = "VeryLazy",
+  --   config = function()
+  --     require("ts-error-translator").setup()
+  --   end,
+  -- },
   {
     "jackMort/ChatGPT.nvim",
     event = "VeryLazy",

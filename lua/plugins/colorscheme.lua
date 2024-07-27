@@ -58,14 +58,15 @@ return {
   { "cideM/yui" },
   { "scolsen/bernhard" },
   {
-    -- dir = os.getenv("HOME") .. (os.getenv("HOME") == "/home/fafa" and "/code/anoukis" or "/Dev/anoukis"),
-    "fafa-a/anoukis",
+    dir = os.getenv("HOME") .. (os.getenv("HOME") == "/home/fafa" and "/code/anoukis" or "/Dev/anoukis"),
+    -- "fafa-a/anoukis",
     priority = 1000,
     lazy = false,
     opts = {
-      transparent_background = true,
+      transparent_background = false,
+      color_background = "white",--"white","light","dark"
       diagnostic_background = false,
-      variants = "", -- defaut "purple" , "gray" | "red" | "orange" | "yellow" | "green" | "cyan" | "blue" | "rose""
+      variants = "purple", --"purple" , "gray" | "red" | "orange" | "yellow" | "green" | "cyan" | "blue" | "rose""
       --   styles = {
       --     comments = { "italic" },
       --     conditionals = {},
