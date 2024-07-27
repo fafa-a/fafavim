@@ -2,14 +2,16 @@
 -- Default autocmds that are always set: https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/autocmds.lua
 -- Add any additional autocmds here
 
--- vim.api.nvim_set_hl(0, "CursorReset", { bg = "#A17EE6", fg = "#FBF9FF" })
---
--- vim.cmd([[
---   augroup RestoreCursorShapeOnExit
---     autocmd!
---     autocmd VimLeave * set guicursor=n-v-c:block,i-ci-ve:ver100/,a:blinkwait700-blinkoff400-blinkon250-CursorReset/lCursorReset
---   augroup END
--- ]])
+vim.api.nvim_set_hl(0, "CursorReset", { bg = "#405c79", fg = "#f7f9fb" })
+
+vim.cmd([[
+  augroup RestoreCursorShapeOnExit
+    autocmd!
+    autocmd VimLeave * set guicursor=n-v-c:block,i-ci-ve:ver100/,a:blinkwait700-blinkoff400-blinkon250-CursorReset/lCursorReset
+  augroup END
+]])
+
+vim.o.guicursor = 'n-v-c:block-Cursor/lCursor,i-ci-ve:ver25-Cursor2/lCursor2,r-cr:hor20,o:hor50'
 
 -- Disable autoformat for all files
 vim.api.nvim_create_autocmd({ "FileType" }, {
