@@ -49,8 +49,8 @@ return {
       })
     end,
   },
-  {
-    "CopilotC-Nvim/CopilotChat.nvim",
+  -- {
+    -- "CopilotC-Nvim/CopilotChat.nvim",
     -- opts = {
     --   mode = "split", -- newbuffer or split  , default: newbuffer
     --   prompts = {
@@ -72,15 +72,15 @@ return {
     --   end, 3000)
     -- end,
     -- event = "VeryLazy",
-    keys = {
-      { "<leader>ar", "<cmd>CopilotChatReview<cr>", desc = "CopilotChat - Review code", mode = { "n", "v" } },
-      {
-        "<leader>af",
-        "<cmd>CopilotChatFixDiagnostic<cr>",
-        desc = "CopilotChat - Fix diagnostic",
-        mode = { "n", "v" },
-      },
-      { "<leader>ao", "<cmd>CopilotChatOptimize<cr>", desc = "CopilotChat - Optimize", mode = { "n", "v" } },
+    -- keys = {
+    --   { "<leader>ar", "<cmd>CopilotChatReview<cr>", desc = "CopilotChat - Review code", mode = { "n", "v" } },
+    --   {
+    --     "<leader>af",
+    --     "<cmd>CopilotChatFixDiagnostic<cr>",
+    --     desc = "CopilotChat - Fix diagnostic",
+    --     mode = { "n", "v" },
+    --   },
+    --   { "<leader>ao", "<cmd>CopilotChatOptimize<cr>", desc = "CopilotChat - Optimize", mode = { "n", "v" } },
       -- { "<leader>cce", "<cmd>CopilotChatExplain<cr>", desc = "CopilotChat - Explain code" },
       -- { "<leader>cct", "<cmd>CopilotChatTests<cr>", desc = "CopilotChat - Generate tests" },
       -- { "<leader>ccr", "<cmd>CopilotChatReview<cr>", desc = "CopilotChat - Review code" },
@@ -89,8 +89,8 @@ return {
       -- { "<leader>ccS", "<cmd>CopilotChatSpelling<cr>", desc = "CopilotChat - Correct spelling" },
       -- { "<leader>ccw", "<cmd>CopilotChatWording<cr>", desc = "CopilotChat - Improve wording" },
       -- { "<leader>ccc", "<cmd>CopilotChatConcise<cr>", desc = "CopilotChat - Make text concise" },
-    },
-  },
+    -- },
+  -- },
   -- {
   --   "dmmulroy/ts-error-translator.nvim",
   --   event = "VeryLazy",
@@ -98,19 +98,19 @@ return {
   --     require("ts-error-translator").setup()
   --   end,
   -- },
-  {
-    "jackMort/ChatGPT.nvim",
-    event = "VeryLazy",
-    config = function()
-      require("chatgpt").setup()
-    end,
-    dependencies = {
-      "MunifTanjim/nui.nvim",
-      "nvim-lua/plenary.nvim",
-      "folke/trouble.nvim",
-      "nvim-telescope/telescope.nvim",
-    },
-  },
+  -- {
+  --   "jackMort/ChatGPT.nvim",
+  --   event = "VeryLazy",
+  --   config = function()
+  --     require("chatgpt").setup()
+  --   end,
+  --   dependencies = {
+  --     "MunifTanjim/nui.nvim",
+  --     "nvim-lua/plenary.nvim",
+  --     "folke/trouble.nvim",
+  --     "nvim-telescope/telescope.nvim",
+  --   },
+  -- },
   {
     {
       "hrsh7th/nvim-cmp",
