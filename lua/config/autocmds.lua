@@ -11,7 +11,7 @@ vim.cmd([[
   augroup END
 ]])
 
-vim.o.guicursor = 'n-v-c:block-Cursor/lCursor,i-ci-ve:ver25-Cursor2/lCursor2,r-cr:hor20,o:hor50'
+vim.o.guicursor = "n-v-c:block-Cursor/lCursor,i-ci-ve:ver25-Cursor2/lCursor2,r-cr:hor20,o:hor50"
 
 -- Disable autoformat for all files
 vim.api.nvim_create_autocmd({ "FileType" }, {
@@ -33,7 +33,7 @@ local function file_exists(name)
 end
 
 vim.api.nvim_create_autocmd("FileType", {
-  pattern = { "gleam", "typescript", "typescriptreact","javascript","rust" },
+  pattern = { "gleam", "typescript", "typescriptreact", "javascript" },
   callback = function()
     vim.b.autoformat = true
     local bufnr = vim.api.nvim_get_current_buf()
@@ -44,7 +44,9 @@ vim.api.nvim_create_autocmd("FileType", {
 
       if filetype == "gleam" and lsp_config.gleam then
         lsp_config.gleam.setup({})
-      elseif (filetype == "typescript" or filetype == "typescriptreact" or filetype == "javascript") and lsp_config.vtsls then
+      elseif
+        (filetype == "typescript" or filetype == "typescriptreact" or filetype == "javascript") and lsp_config.vtsls
+      then
         lsp_config.vtsls.setup({})
 
         if file_exists("biome.json") then
@@ -56,7 +58,6 @@ vim.api.nvim_create_autocmd("FileType", {
         if file_exists(".prettierrc") or file_exists(".prettierrc.js") or file_exists(".prettierrc.json") then
           lsp_config.prettier.setup({})
         end
-
       end
 
       vim.lsp.buf_attach_client(bufnr, 0)
