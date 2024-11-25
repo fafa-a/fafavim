@@ -1,23 +1,5 @@
 return {
   {
-    "catppuccin/nvim",
-    as = "catpuccin",
-    config = function()
-      local catppuccin = require("catppuccin")
-
-      catppuccin.setup({
-        flavour = "latte",
-        transparent_background = true,
-      })
-    end,
-  },
-
-  { "M1nts02/akane.nvim", priority = 1000 },
-  { "owickstrom/vim-colors-paramount" },
-  { "stefanvanburen/rams.vim" },
-  { "cideM/yui" },
-  { "scolsen/bernhard" },
-  {
     -- dir = os.getenv("HOME") .. (os.getenv("HOME") == "/home/fafa" and "/code/anoukis" or "/Dev/anoukis"),
     "fafa-a/anoukis",
     priority = 1000,
@@ -41,6 +23,23 @@ return {
       -- },
     },
   },
+  {
+    "catppuccin/nvim",
+    as = "catpuccin",
+    config = function()
+      local catppuccin = require("catppuccin")
+
+      catppuccin.setup({
+        flavour = "latte",
+        transparent_background = true,
+      })
+    end,
+  },
+  -- { "M1nts02/akane.nvim", priority = 1000 },
+  -- { "owickstrom/vim-colors-paramount" },
+  -- { "stefanvanburen/rams.vim" },
+  -- { "cideM/yui" },
+  -- { "scolsen/bernhard" },
   {
     "LazyVim/LazyVim",
     opts = {
