@@ -6,7 +6,6 @@ return {
       "cmake",
       "css",
       "gitignore",
-      "graphql",
       "http",
       "python",
       "rust",
