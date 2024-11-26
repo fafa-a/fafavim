@@ -15,18 +15,9 @@ local function check_prettier_config(bufnr)
   return { "biome" }
 end
 
-local prettier_svelte =
-  vim.fn.resolve(vim.fn.stdpath("data") .. "/mason/packages/prettier/node_modules/prettier-plugin-svelte/plugin.js")
-
 return {
   "stevearc/conform.nvim",
   opts = {
-    formatters = {
-      svelte_fmt = {
-        command = "prettier",
-        args = { "--plugin", prettier_svelte, "$FILENAME" },
-      },
-    },
     formatters_by_ft = {
       javascript = function(bufnr)
         return check_prettier_config(bufnr)
@@ -43,7 +34,6 @@ return {
       json = function(bufnr)
         return check_prettier_config(bufnr)
       end,
-      svelte = { "svelte_fmt" },
     },
     log_level = vim.log.levels.ERROR,
     notify_on_error = true,
