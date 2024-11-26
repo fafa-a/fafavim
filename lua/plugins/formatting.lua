@@ -34,6 +34,9 @@ return {
       json = function(bufnr)
         return check_prettier_config(bufnr)
       end,
+      svelte = function(bufnr)
+        return check_prettier_config(bufnr)
+      end,
     },
     log_level = vim.log.levels.ERROR,
     notify_on_error = true,
