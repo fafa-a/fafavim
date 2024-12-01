@@ -7,15 +7,6 @@ return {
     end,
   },
   {
-    "echasnovski/mini.animate",
-    event = "VeryLazy",
-    opts = function(_, opts)
-      opts.cursor = {
-        enable = false,
-      }
-    end,
-  },
-  {
     "folke/zen-mode.nvim",
     opts = {
       plugins = {
