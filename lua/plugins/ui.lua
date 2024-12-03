@@ -47,6 +47,33 @@ return {
       presets = {
         lsp_doc_border = true, -- add a border to hover docs and signature help
       },
+      lsp = {
+        documentation = {
+          view = "hover",
+          opts = { -- lsp_docs settings
+            lang = "markdown",
+            replace = true,
+            render = "plain",
+            format = { "{message}" },
+            position = { row = 2, col = 2 },
+            size = {
+              max_width = math.floor(0.6 * vim.api.nvim_win_get_width(0)),
+              max_height = 15,
+            },
+            border = {
+              style = "rounded",
+            },
+            win_options = {
+              concealcursor = "n",
+              conceallevel = 3,
+              winhighlight = {
+                Normal = "NormalFloat",
+                FloatBorder = "FloatBorder",
+              },
+            },
+          },
+        },
+      },
     },
   },
 }
