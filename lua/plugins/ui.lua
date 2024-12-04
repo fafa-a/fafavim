@@ -1,43 +1,9 @@
 return {
   {
-    "folke/noice.nvim",
-    opts = {
-      presets = { lsp_doc_border = true },
-    },
-  },
-  {
-    "nvimdev/dashboard-nvim",
-    event = "VimEnter",
-    opts = function(_, opts)
-      local logo = [[
-
-        ███████╗ █████╗ ███████╗ █████╗ ██╗   ██╗██╗███╗   ███╗
-        ██╔════╝██╔══██╗██╔════╝██╔══██╗██║   ██║██║████╗ ████║
-        █████╗  ███████║█████╗  ███████║██║   ██║██║██╔████╔██║
-        ██╔══╝  ██╔══██║██╔══╝  ██╔══██║╚██╗ ██╔╝██║██║╚██╔╝██║
-        ██║     ██║  ██║██║     ██║  ██║ ╚████╔╝ ██║██║ ╚═╝ ██║
-        ╚═╝     ╚═╝  ╚═╝╚═╝     ╚═╝  ╚═╝  ╚═══╝  ╚═╝╚═╝     ╚═╝
-
-      ]]
-
-      logo = string.rep("\n", 8) .. logo .. "\n\n"
-      opts.config.header = vim.split(logo, "\n")
-    end,
-  },
-  {
     "tzachar/highlight-undo.nvim",
     opts = {},
     config = function()
       require("highlight-undo").setup({})
-    end,
-  },
-  {
-    "echasnovski/mini.animate",
-    event = "VeryLazy",
-    opts = function(_, opts)
-      opts.cursor = {
-        enable = false,
-      }
     end,
   },
   {
@@ -74,5 +40,40 @@ return {
         highlights = require("anoukis.plugins.bufferline").setup(),
       })
     end,
+  },
+  {
+    "folke/noice.nvim",
+    opts = {
+      presets = {
+        lsp_doc_border = true, -- add a border to hover docs and signature help
+      },
+      lsp = {
+        documentation = {
+          view = "hover",
+          opts = { -- lsp_docs settings
+            lang = "markdown",
+            replace = true,
+            render = "plain",
+            format = { "{message}" },
+            position = { row = 2, col = 2 },
+            size = {
+              max_width = math.floor(0.6 * vim.api.nvim_win_get_width(0)),
+              max_height = 15,
+            },
+            border = {
+              style = "rounded",
+            },
+            win_options = {
+              concealcursor = "n",
+              conceallevel = 3,
+              winhighlight = {
+                Normal = "NormalFloat",
+                FloatBorder = "FloatBorder",
+              },
+            },
+          },
+        },
+      },
+    },
   },
 }
