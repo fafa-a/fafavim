@@ -174,4 +174,8 @@ return {
       })
     end,
   },
+  {
+    "sontungexpt/better-diagnostic-virtual-text",
+    lazy = true,
+  },
 }
