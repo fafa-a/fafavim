@@ -6,8 +6,9 @@
 vim.api.nvim_create_autocmd({ "FileType" }, {
   pattern = { "*" },
   callback = function()
-    vim.b.autoformat = false
+    -- vim.b.autoformat = false
     vim.wo.spell = false
+    vim.diagnostic.config({ virtual_text = false })
   end,
 })
 
