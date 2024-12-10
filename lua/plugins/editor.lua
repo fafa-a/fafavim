@@ -232,4 +232,15 @@ return {
       { "<leader>h", ":HurlRunner<CR>", desc = "Hurl Runner", mode = "v" },
     },
   },
+  {
+    "nvim-telescope/telescope.nvim",
+    config = function()
+      require("telescope").setup({
+        extensions = {
+          fzf = {},
+        },
+      })
+      require("telescope").load_extension("fzf")
+    end,
+  },
 }
