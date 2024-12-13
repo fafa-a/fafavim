@@ -20,3 +20,4 @@ vim.opt.directory = backupDir
 opt.undofile = true
 
 vim.g.root_spec = { "cwd" }
+vim.g.lazyvim_prettier_needs_config = true

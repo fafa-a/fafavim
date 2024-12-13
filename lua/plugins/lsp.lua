@@ -23,9 +23,9 @@ return {
           left_kept_space = 3, --- the number of spaces kept on the left side of the virtual text, make sure it enough to custom for each line
           right_kept_space = 3, --- the number of spaces kept on the right side of the virtual text, make sure it enough to custom for each line
           -- arrow = "  ",
-          -- arrow = " ⟵ ",
+          arrow = " ⟵ ",
           -- arrow = " 🡰 ",
-          arrow = " 🡐 ",
+          -- arrow = " 🡐 ",
           up_arrow = "  ",
           down_arrow = "  ",
           above = false, -- the virtual text will be displayed above the line
