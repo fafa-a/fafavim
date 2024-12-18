@@ -210,7 +210,10 @@ return {
     opts = {
       fzf_opts = {
         ["--no-scrollbar"] = false,
+        ["--layout"] = "reverse",
       },
+      -- fzf_colors = true,
     },
   },
+  { "folke/which-key.nvim", opts = { preset = "modern" } },
 }
