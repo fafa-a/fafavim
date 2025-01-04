@@ -7,6 +7,14 @@ return {
           vim.cmd.RustLsp("codeAction")
         end, { desc = "Code Action", buffer = bufnr })
       end,
+      default_settings = {
+        -- rust-analyzer language server configuration
+        ["rust-analyzer"] = {
+          rustfmt = {
+            overrideCommand = { "leptosfmt", "--stdin", "--rustfmt" },
+          },
+        },
+      },
     },
   },
 }
