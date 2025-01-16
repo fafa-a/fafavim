@@ -5,7 +5,7 @@ return {
     priority = 1000,
     lazy = false,
     opts = {
-      transparent_background = false,
+      transparent_background = true,
       color_background = "light", --"light","dark"
       diagnostic_background = false,
       variants = "purple", --"purple" , "gray" | "red" | "orange" | "yellow" | "green" | "cyan" | "blue" | "rose""

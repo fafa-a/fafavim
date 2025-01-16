@@ -44,6 +44,8 @@ return {
           mapping = cmp.mapping.preset.insert({
             ["<C-b>"] = cmp.mapping.scroll_docs(-4),
             ["<C-f>"] = cmp.mapping.scroll_docs(4),
+            ["<C-n>"] = cmp.mapping.select_next_item({ behavior = cmp.SelectBehavior.Insert }),
+            ["<C-p>"] = cmp.mapping.select_prev_item({ behavior = cmp.SelectBehavior.Insert }),
             ["<C-Space>"] = cmp.mapping.complete(),
             ["<CR>"] = LazyVim.cmp.confirm({ select = auto_select }),
             ["<C-y>"] = LazyVim.cmp.confirm({ select = true }),
@@ -52,8 +54,12 @@ return {
               cmp.abort()
               fallback()
             end,
+            ["<tab>"] = function(fallback)
+              return LazyVim.cmp.map({ "snippet_forward", "ai_accept" }, fallback)()
+            end,
           }),
           sources = cmp.config.sources({
+            { name = "lazydev" },
             { name = "nvim_lsp" },
             { name = "path" },
           }, {
@@ -81,9 +87,10 @@ return {
             end,
           },
           experimental = {
-            ghost_text = {
+            -- only show ghost text when we show ai completions
+            ghost_text = vim.g.ai_cmp and {
               hl_group = "CmpGhostText",
-            },
+            } or false,
           },
           sorting = defaults.sorting,
         }
