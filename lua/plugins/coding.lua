@@ -103,11 +103,14 @@ return {
     opts = {
       completion = {
         menu = {
+          border = "rounded",
           draw = {
             columns = { { "label" }, { "kind_icon" } },
           },
         },
+        documentation = { window = { border = "rounded" } },
       },
+      signature = { window = { border = "single" } },
     },
   },
 }
