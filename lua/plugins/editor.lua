@@ -13,58 +13,45 @@ return {
     },
   },
   {
-    --   -- Use <tab> for completion and snippets (supertab)
-    --   -- first: disable default <tab> and <s-tab> behavior in LuaSnip
-    {
-      "L3MON4D3/LuaSnip",
-      keys = function()
-        return {}
-      end,
-    },
-    -- then: setup supertab in cmp
-    {
-      "hrsh7th/nvim-cmp",
-      dependencies = {
-        "hrsh7th/cmp-emoji",
-      },
-      ---@param opts cmp.ConfigSchema
-      opts = function(_, opts)
-        local has_words_before = function()
-          unpack = unpack or table.unpack
-          local line, col = unpack(vim.api.nvim_win_get_cursor(0))
-          return col ~= 0 and vim.api.nvim_buf_get_lines(0, line - 1, line, true)[1]:sub(col, col):match("%s") == nil
-        end
+    "hrsh7th/nvim-cmp",
+    ---@param opts cmp.ConfigSchema
+    opts = function(_, opts)
+      local has_words_before = function()
+        unpack = unpack or table.unpack
+        local line, col = unpack(vim.api.nvim_win_get_cursor(0))
+        return col ~= 0 and vim.api.nvim_buf_get_lines(0, line - 1, line, true)[1]:sub(col, col):match("%s") == nil
+      end
 
-        local luasnip = require("luasnip")
-        local cmp = require("cmp")
-        -- opts.completion = { autocomplete = false }
+      local cmp = require("cmp")
 
-        opts.mapping = vim.tbl_extend("force", opts.mapping, {
-          ["<Tab>"] = cmp.mapping(function(fallback)
-            if cmp.visible() then
-              cmp.select_next_item()
-            -- You could replace the expand_or_jumpable() calls with expand_or_locally_jumpable()
-            -- this way you will only jump inside the snippet region
-            elseif luasnip.expand_or_jumpable() then
-              luasnip.expand_or_jump()
-            elseif has_words_before() then
-              cmp.complete()
-            else
-              fallback()
-            end
-          end, { "i", "s" }),
-          ["<S-Tab>"] = cmp.mapping(function(fallback)
-            if cmp.visible() then
-              cmp.select_prev_item()
-            elseif luasnip.jumpable(-1) then
-              luasnip.jump(-1)
-            else
-              fallback()
-            end
-          end, { "i", "s" }),
-        })
-      end,
-    },
+      opts.mapping = vim.tbl_extend("force", opts.mapping, {
+        ["<Tab>"] = cmp.mapping(function(fallback)
+          if cmp.visible() then
+            -- You could replace select_next_item() with confirm({ select = true }) to get VS Code autocompletion behavior
+            cmp.select_next_item()
+          elseif vim.snippet.active({ direction = 1 }) then
+            vim.schedule(function()
+              vim.snippet.jump(1)
+            end)
+          elseif has_words_before() then
+            cmp.complete()
+          else
+            fallback()
+          end
+        end, { "i", "s" }),
+        ["<S-Tab>"] = cmp.mapping(function(fallback)
+          if cmp.visible() then
+            cmp.select_prev_item()
+          elseif vim.snippet.active({ direction = -1 }) then
+            vim.schedule(function()
+              vim.snippet.jump(-1)
+            end)
+          else
+            fallback()
+          end
+        end, { "i", "s" }),
+      })
+    end,
   },
   {
     "lewis6991/gitsigns.nvim",
@@ -114,25 +101,8 @@ return {
     },
   },
   {
-    "ThePrimeagen/harpoon",
-    branch = "harpoon2",
-    opts = {
-      menu = {
-        width = vim.api.nvim_win_get_width(0) - 4,
-      },
-    },
-    keys = {
-      {
-        "<leader>hh",
-        function()
-          require("harpoon"):list():add()
-        end,
-        desc = "Harpoon file",
-      },
-    },
-  },
-  {
     "norcalli/nvim-colorizer.lua",
+    event = "VeryLazy",
     config = function()
       require("colorizer").setup({
         "css",
@@ -152,6 +122,7 @@ return {
   },
   {
     "cjodo/convert.nvim",
+    event = "VeryLazy",
     dependencies = {
       "MunifTanjim/nui.nvim",
     },
@@ -168,10 +139,81 @@ return {
   {
     "roobert/tailwindcss-colorizer-cmp.nvim",
     -- optionally, override the default options:
+    event = "VeryLazy",
     config = function()
       require("tailwindcss-colorizer-cmp").setup({
         color_square_width = 2,
       })
     end,
   },
+  {
+    "jellydn/hurl.nvim",
+    event = "VeryLazy",
+    dependencies = {
+      "MunifTanjim/nui.nvim",
+      "nvim-lua/plenary.nvim",
+      "nvim-treesitter/nvim-treesitter",
+      -- Optional, for markdown rendering with render-markdown.nvim
+      {
+        "MeanderingProgrammer/render-markdown.nvim",
+        opts = {
+          file_types = { "markdown" },
+        },
+        ft = { "markdown" },
+      },
+    },
+    ft = "hurl",
+    opts = {
+      -- Show debugging info
+      debug = false,
+      -- Show notification on run
+      show_notification = false,
+      -- Show response in popup or split
+      mode = "split",
+      -- Default formatter
+      formatters = {
+        json = { "jq" }, -- Make sure you have install jq in your system, e.g: brew install jq
+        html = {
+          "prettier", -- Make sure you have install prettier in your system, e.g: npm install -g prettier
+          "--parser",
+          "html",
+        },
+        xml = {
+          "tidy", -- Make sure you have installed tidy in your system, e.g: brew install tidy-html5
+          "-xml",
+          "-i",
+          "-q",
+        },
+      },
+      -- Default mappings for the response popup or split views
+      mappings = {
+        close = "q", -- Close the response popup or split view
+        next_panel = "<C-n>", -- Move to the next response popup window
+        prev_panel = "<C-p>", -- Move to the previous response popup window
+      },
+    },
+    keys = {
+      -- Run API request
+      { "<leader>rA", "<cmd>HurlRunner<CR>", desc = "Run All requests" },
+      { "<leader>ra", "<cmd>HurlRunnerAt<CR>", desc = "Run Api request" },
+      { "<leader>te", "<cmd>HurlRunnerToEntry<CR>", desc = "Run Api request to entry" },
+      { "<leader>tE", "<cmd>HurlRunnerToEnd<CR>", desc = "Run Api request from current entry to end" },
+      { "<leader>tm", "<cmd>HurlToggleMode<CR>", desc = "Hurl Toggle Mode" },
+      { "<leader>tv", "<cmd>HurlVerbose<CR>", desc = "Run Api in verbose mode" },
+      { "<leader>tV", "<cmd>HurlVeryVerbose<CR>", desc = "Run Api in very verbose mode" },
+      -- Run Hurl request in visual mode
+      { "<leader>h", ":HurlRunner<CR>", desc = "Hurl Runner", mode = "v" },
+    },
+  },
+  {
+    "ibhagwan/fzf-lua",
+    opts = {
+      fzf_opts = {
+        ["--no-scrollbar"] = false,
+        ["--layout"] = "reverse",
+      },
+      -- fzf_colors = true,
+    },
+  },
+  { "folke/which-key.nvim", opts = { preset = "modern" } },
 }
